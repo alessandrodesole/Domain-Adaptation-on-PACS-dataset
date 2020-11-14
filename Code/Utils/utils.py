@@ -1,4 +1,5 @@
 import pandas as pd
+from google.colab import output
 
 # Check if classes are distributed equally between training and test set
 
@@ -33,4 +34,6 @@ def check_classes(train_dataset, test_dataset, val_dataset=None):
   if val_dataset is not None:
     l_val = pd.Series(labels_val)
     print(l_val.value_counts(sort=False))
+  
+  return
   

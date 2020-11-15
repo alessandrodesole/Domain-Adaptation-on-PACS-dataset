@@ -11,6 +11,6 @@ ___
 
 # References
 
-[1. Domain-Adversarial Training of Neural Networks](https://arxiv.org/abs/1505.07818)
-[2. Deeper, Broader and Artier Domain Generalization](http://www.eecs.qmul.ac.uk/~dl307/Doc/Publication/2017/deeper-broader-artier.pdf)
-[3. ImageNet Classification with Deep Convolutional Neural Networks](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)
+1. [Domain-Adversarial Training of Neural Networks](https://arxiv.org/abs/1505.07818)
+2. [Deeper, Broader and Artier Domain Generalization](http://www.eecs.qmul.ac.uk/~dl307/Doc/Publication/2017/deeper-broader-artier.pdf)
+3. [ImageNet Classification with Deep Convolutional Neural Networks](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)

@@ -1,4 +1,6 @@
 import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
 from google.colab import output
 
 # Check if classes are distributed equally between training and test set
@@ -195,3 +197,68 @@ def imshow(inp, title=None):
     if title is not None:
         plt.title(title)
     plt.pause(0.001)  # pause a bit so that plots are updated
+    
+# Functions to plot training results 
+
+def plot_loss(loss_train):
+  epochs = range(NUM_EPOCHS)
+  loss_train = np.array(loss_train)
+  plt.plot(epochs, loss_train, linestyle='-', color='b', label='Training loss')
+  plt.title('Training loss', fontsize=15, fontweight='bold')
+  plt.xlabel('Epochs', fontsize=10, labelpad=7)
+  plt.ylabel('Loss', fontsize=10, labelpad=10)
+  plt.legend()
+  plt.grid()
+  plt.show()
+
+def plot_loss_val(loss_train, loss_val):
+  epochs = range(NUM_EPOCHS)
+  loss_train = np.array(loss_train)
+  loss_val = np.array(loss_val)
+  plt.plot(epochs, loss_train, linestyle='-', color='b', label='Training loss')
+  plt.plot(epochs, loss_val, linestyle='-', color='darkorange', label='Validation loss')
+  plt.title('Training and Validation loss', fontsize=15, fontweight='bold')
+  plt.xlabel('Epochs', fontsize=10, labelpad=7)
+  plt.ylabel('Loss', fontsize=10, labelpad=10)
+  plt.legend()
+  plt.grid()
+  plt.show()
+
+def plot_loss_DANN(train_class_losses, train_domain_losses, test_domain_losses):
+  epochs = range(NUM_EPOCHS)
+  train_class_losses = np.array(train_class_losses)
+  train_domain_losses = np.array(train_domain_losses)
+  test_domain_losses = np.array(test_domain_losses)
+  plt.plot(epochs, train_class_losses, linestyle='-', color='b', label='Source Class loss')
+  plt.plot(epochs, train_domain_losses, linestyle='-', color='g', label='Source Domain loss')
+  plt.plot(epochs, test_domain_losses, linestyle='-', color='r', label='Target Domain loss')
+  plt.title('DANN losses', fontsize=15, fontweight='bold')
+  plt.xlabel('Epochs', fontsize=10, labelpad=7)
+  plt.ylabel('Loss', fontsize=10, labelpad=10)
+  plt.legend()
+  plt.grid()
+  plt.show()
+
+def plot_accuracy(acc_train):
+  epochs = range(NUM_EPOCHS)
+  acc_train = np.array(acc_train)
+  plt.plot(epochs, acc_train, linestyle='-', color='b', label='Training accuracy')
+  plt.title('Training accuracy', fontsize=15, fontweight='bold')
+  plt.xlabel('Epochs', fontsize=10, labelpad=7)
+  plt.ylabel('Accuracy', fontsize=10, labelpad=10)
+  plt.legend()
+  plt.grid()
+  plt.show()
+
+def plot_accuracy_val(acc_train, acc_val):
+  epochs = range(NUM_EPOCHS)
+  acc_train = np.array(acc_train)
+  acc_val = np.array(acc_val)
+  plt.plot(epochs, acc_train, linestyle='-', color='b', label='Training accuracy')
+  plt.plot(epochs, acc_val, linestyle='-', color='darkorange', label='Validation accuracy')
+  plt.title('Training and Validation accuracy', fontsize=15, fontweight='bold')
+  plt.xlabel('Epochs', fontsize=10, labelpad=7)
+  plt.ylabel('Accuracy', fontsize=10, labelpad=10)
+  plt.legend()
+  plt.grid()
+  plt.show()

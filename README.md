@@ -3,14 +3,14 @@ Implementation of Domain Adaptation algorithm on PACS dataset starting from Alex
 
 Useful resources:
 
-* [Google Colab Notebook] (https://colab.research.google.com/drive/1HxoJ_pzKpyMPeZ9MW5RWZzcKJwV1Ppnn#scrollTo=n2tBJQg0wjb7)
-* [Results] (https://github.com/alessandrodesole/Domain-Adaptation-on-PACS-dataset/blob/main/Results/results.xlsx)
-* [Report] (https://github.com/alessandrodesole/Domain-Adaptation-on-PACS-dataset/blob/main/report_DANN.pdf)
+* [Google Colab Notebook](https://colab.research.google.com/drive/1HxoJ_pzKpyMPeZ9MW5RWZzcKJwV1Ppnn#scrollTo=n2tBJQg0wjb7)
+* [Results](https://github.com/alessandrodesole/Domain-Adaptation-on-PACS-dataset/blob/main/Results/results.xlsx)
+* [Report](https://github.com/alessandrodesole/Domain-Adaptation-on-PACS-dataset/blob/main/report_DANN.pdf)
 
 ___
 
 # References
 
-[Domain-Adversarial Training of Neural Networks] (https://arxiv.org/abs/1505.07818)
-[Deeper, Broader and Artier Domain Generalization] (http://www.eecs.qmul.ac.uk/~dl307/Doc/Publication/2017/deeper-broader-artier.pdf)
-[ImageNet Classification with Deep Convolutional Neural Networks] (https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)
+[Domain-Adversarial Training of Neural Networks](https://arxiv.org/abs/1505.07818)
+[Deeper, Broader and Artier Domain Generalization](http://www.eecs.qmul.ac.uk/~dl307/Doc/Publication/2017/deeper-broader-artier.pdf)
+[ImageNet Classification with Deep Convolutional Neural Networks](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)

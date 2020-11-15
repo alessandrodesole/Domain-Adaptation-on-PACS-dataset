@@ -94,9 +94,9 @@ def compute_means(train_dataset):
   
   return
 
-# Images distribution among domains/classes
+# Compute and plot images distribution among domains/classes
 
-def compute_distribution(classes, domains, train_dataset, test_dataset, val_dataset=None, class_dataset, domains_dataset):
+def compute_plot_distribution(classes, domains, train_dataset, test_dataset, val_dataset=None, class_dataset, domains_dataset):
   count_train_items = {}
   count_test_items = {}
   count_val_items = {}
@@ -150,5 +150,48 @@ def compute_distribution(classes, domains, train_dataset, test_dataset, val_data
     print()
     print("Val dataset")
     print(count_val_items)
+    
+  index = np.arange(len(classes))
+  plt.figure(figsize=(15, 8))
+  p1 = plt.bar(index, count_train_items.values(), color='royalblue', width=0.5)
+  #p2 = plt.bar(index, count_val_items.values(), bottom=list(count_train_items.values()), color='limegreen')
+  #p2 = plt.bar(index, count_test_items.values(), bottom=list(count_train_items.values()), color='darkorange', width=0.5)
+  plt.xlabel('Domains', fontsize=25, labelpad=15)
+  plt.ylabel('Count', fontsize=25, labelpad=15)
+  #plt.title('Number of images by domain in PACS', fontsize=30, pad=15)
+  plt.title('Training and Test image distribution', fontsize=30, pad=15)
+  plt.xticks(index, classes, fontsize=20)
+  #plt.legend((p1[0], p2[0]), ('train', 'test'), prop={'size': 20})
+  plt.show()
+
+  if val_dataset is not None:
+    index = np.arange(len(classes))
+    plt.figure(figsize=(15, 8))
+    p1 = plt.bar(index, count_train_items.values(), color='royalblue', width=0.5)
+    p2 = plt.bar(index, count_val_items.values(), bottom=list(count_train_items.values()), color='darkorange', width=0.5)
+    p3 = plt.bar(index, count_test_items.values(), bottom=list(count_train_items.values()), color='limegreen', width=0.5)
+    plt.xlabel('Classes', fontsize=25, labelpad=15)
+    plt.ylabel('Count', fontsize=25, labelpad=15)
+    #plt.title('Number of domains by class in PACS', fontsize=30, pad=15)
+    plt.title('Training, Validation and Test image distribution', fontsize=30, pad=15)
+    plt.xticks(index, classes, fontsize=20)
+    plt.legend((p1[0], p2[0], p3[0]), ('train', 'validation','test'), prop={'size': 20})
+    plt.show()
   
   return
+
+# Show images
+
+def imshow(inp, title=None):
+    """Imshow for Tensor."""
+    inp = inp.numpy().transpose((1, 2, 0))
+    mean = np.array([0.485, 0.456, 0.406])
+    std = np.array([0.229, 0.224, 0.225])
+    #mean = np.array([0.5, 0.5, 0.5])
+    #std = np.array([0.5, 0.5, 0.5])
+    inp = std * inp + mean
+    inp = np.clip(inp, 0, 1)
+    plt.imshow(inp)
+    if title is not None:
+        plt.title(title)
+    plt.pause(0.001)  # pause a bit so that plots are updated
